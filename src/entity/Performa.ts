@@ -117,7 +117,7 @@ class PerformaItems {
     piqty: number;
 
     @Column({ type: 'float', nullable: true })
-    fob: number;
+    price: number;
 
     @ManyToOne(() => Performa, (order) => order.PerformaItems)
     @JoinTable()

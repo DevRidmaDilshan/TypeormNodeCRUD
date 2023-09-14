@@ -16,7 +16,7 @@ import clearnceRoutes from './routes/clearnceRoute';
 import shipmentgldataRoute from './routes/shipmentgldataRoute';
 import lcttRoute from './routes/lcttRoute';
 import shipmentsheduleRoute from './routes/shipmentsheduleRoute';
-
+import fileReupRoutes from './routes/fileReup';
 import cookieParser from 'cookie-parser';
 
 const app = express()
@@ -42,7 +42,7 @@ app.use('/api/clearance', clearnceRoutes);
 app.use('/api/shipmentshedule', shipmentsheduleRoute);
 app.use('/api/shipmentgldata', shipmentgldataRoute);
 app.use('/api/lctt', lcttRoute);
-
+app.use('/api/reup', fileReupRoutes);
 
 
 

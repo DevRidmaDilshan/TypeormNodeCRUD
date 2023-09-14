@@ -10,13 +10,14 @@ import { lc_tr } from "../entity/lcttModel"
 
 
 
+
 const myDataSource = new DataSource({
   type: "mysql",
   host: "localhost",
   username: "root",
   password: "1234",
-  database: "wheels1",
-  synchronize: true,
+  database: "wheels",
+  synchronize: false,
   logging: true,
   entities: [Post, Category,Order,OrderItems, Users,Performa, PerformaItems,Shipment, ShipmentItems,Clearnce,lc_tr],
   subscribers: [],
@@ -30,9 +31,9 @@ const myDataSource = new DataSource({
  const myDataSource1 = new DataSource({
   type: "sqlite",
   database: "./database.sqlite",
-  synchronize: false,
+  synchronize: true,
   logging: true,
-  entities: [Post, Category,Order,OrderItems, Users],
+  entities: [Post, Category,Order,OrderItems, Users,Performa, PerformaItems,Shipment, ShipmentItems,Clearnce,lc_tr],
   subscribers: [],
   migrations: [],
 })

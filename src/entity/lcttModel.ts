@@ -18,9 +18,9 @@ import {
     @Column({ type: 'varchar' })
     code: string;
   
-    @Column({ type: 'varchar' })
-    name: string;
-  
+    @Column({ type: 'varchar', nullable: true })
+    name: string | null; 
+
     @Column({ type: 'date' })
     sdate: Date;
   

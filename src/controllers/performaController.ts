@@ -205,10 +205,6 @@ const getData = asyncHandler(async (req, res) => {
         itemsls
         );
       
-
-
-
-      
       res.json({
         id: req.body.id
       });
