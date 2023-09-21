@@ -19,6 +19,9 @@ class Shipment {
   piNo: string;
 
   @Column()
+  value: string;
+  
+  @Column()
   shipmentNo: string;
 
   @Column()
@@ -121,6 +124,9 @@ class ShipmentItems {
 
     @Column({ type: 'integer', nullable: true })
     qty: number;
+
+    @Column({ type: 'float', nullable: true })
+    price: number;
     
     @Column({ type: 'integer', nullable: true })
     piqty: number;

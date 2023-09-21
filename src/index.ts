@@ -18,7 +18,7 @@ import lcttRoute from './routes/lcttRoute';
 import shipmentsheduleRoute from './routes/shipmentsheduleRoute';
 import fileReupRoutes from './routes/fileReup';
 import cookieParser from 'cookie-parser';
-
+import shipmentDetailsRoutes from './routes/shipmentDetailsRoutes';
 const app = express()
 app.use(express.json())
 app.use(cookieParser());
@@ -43,6 +43,7 @@ app.use('/api/shipmentshedule', shipmentsheduleRoute);
 app.use('/api/shipmentgldata', shipmentgldataRoute);
 app.use('/api/lctt', lcttRoute);
 app.use('/api/reup', fileReupRoutes);
+app.use('/api/shipmentDetails', shipmentDetailsRoutes);
 
 
 

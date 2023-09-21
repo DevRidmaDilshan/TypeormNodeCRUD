@@ -79,12 +79,8 @@ const register = asyncHandler(async (req, res) => {
     const performa = entry.id;
     const orderitemsls = performaItems.map((item) => ({  ...item, performa }));
 
-    const userRepositoryitms = myDataSource.getRepository(PerformaItems)
-    const orderls = await userRepositoryitms.save(
-      orderitemsls
-    );
-
-   
+    const userRepositoryitms = myDataSource.getRepository(PerformaItems);
+    const orderls = await userRepositoryitms.save(orderitemsls);
 
     if (entry) {
       
@@ -110,6 +106,7 @@ const getData = asyncHandler(async (req, res) => {
       const entries = await userRepository.find({
         relations: {
             PerformaItems: true,
+            
         },
         order: {
             piDate: "DESC", 
@@ -127,6 +124,7 @@ const getData = asyncHandler(async (req, res) => {
       res.status(404);
       throw new Error('Not found');
     }
+    
   });
   
 

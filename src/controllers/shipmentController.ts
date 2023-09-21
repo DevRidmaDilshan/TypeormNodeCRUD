@@ -11,6 +11,7 @@ const register = asyncHandler(async (req, res) => {
 
     const {
       piNo,
+      value,
       shipmentNo,
       invoiceNo,
       invoiceDate, 
@@ -56,6 +57,7 @@ const register = asyncHandler(async (req, res) => {
   
     const entry = await userRepository.save({
       piNo,
+      value,
       shipmentNo,
       invoiceNo,
       invoiceDate, 
@@ -151,6 +153,7 @@ const getData = asyncHandler(async (req, res) => {
 
 
     const { piNo,
+        value,
         shipmentNo,
         invoiceNo,
         invoiceDate, 

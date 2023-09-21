@@ -186,6 +186,55 @@ async function getReportView(req, res) {
               });
         
             }
+
+            if (req.query.reptype == "shipmentDetails") {
+
+
+              
+
+              const entries = await queryRunner.manager.query(`SELECT code,description,qty FROM shipments as a ,shipment_items as b WHERE a.id = b.shipmentId AND shipmentNO = '${req.query.shipmentNo}'`);
+              
+              const entries2 = [];
+              for (const result of entries){
+              const entries1 = {
+              code: result.code, 
+              description: result.description, 
+              qty: result.qty, 
+              remark : 0,
+              test1 : 0,
+              test2 : 0,
+              test3 : 0,
+              test4 : 0,
+              test5 : 0,
+              test6 : 0,
+              test7 : 0,
+              test8 : 0,
+              test9 : 0,
+              test10 : 0,
+              test11 : 0,
+              test12 : 0,
+              test13 : 0,
+              test14 : 0,
+              test15 : 0,
+              test16 : 0,
+              test17 : 0,
+              test18 : 0,
+              test19 : 0,
+              test20 : 0,
+              test21 : 0,
+              test22 : 0,
+
+             }
+             entries2.push(entries1);
+
+            }
+            console.log(entries2);
+              res.json({
+                entries: entries2 ,
+              
+              });
+        
+            }
        
 
       } catch (error) {
